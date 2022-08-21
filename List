@@ -2,7 +2,7 @@ List is a collection data type which is ordered and mutable. Unlike Sets, Lists 
 
 my_list = ["BMW", "Lemborgini", "Baleno"]
 
-##Comparison of basic built-in collection data types in Python:
+**Comparison of basic built-in collection data types in Python:
 
 - List is a collection which is ordered and mutable. Allows duplicate members.
 
