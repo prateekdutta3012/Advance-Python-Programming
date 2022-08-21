@@ -1,0 +1,11 @@
+The logging module in Python is a powerful built-in module so you can quickly add logging to your application.
+import logging
+
+Log Level
+There are 5 different log levels indicating the serverity of events. By default, the system logs only events with level WARNING and above.
+
+Logging in modules and logger hierarchy
+Best practice in your application with multiple modules is to create an internal logger using the __name__ global variable. This will create a logger with the name of 
+your module and ensures no name collisions. The logging module creates a hierarchy of loggers, starting with the root logger, and adding the new logger to this hierarchy.
+If you then import your module in another module, log messages can be associated with the correct module through the logger name. Note that changing the basicConfig of 
+the root logger will also affect the log events of the other (lower) loggers in the hierarchy.
