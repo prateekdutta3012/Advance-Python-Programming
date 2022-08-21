@@ -1,0 +1,20 @@
+The Python itertools module is a collection of tools for handling iterators. Simply put, iterators are data types that can be used in a for loop. The most common 
+iterator in Python is the list.
+
+product()
+This tool computes the cartesian product of input iterables.
+It is equivalent to nested for-loops. For example, product(A, B) returns the same as ((x,y) for x in A for y in B).
+
+permutations()
+This tool returns successive length permutations of elements in an iterable, with all possible orderings, and no repeated elements.
+
+combinations() and combinations_with_replacement()
+r-length tuples, in sorted order. So, if the input iterable is sorted, the combination tuples will be produced in sorted order. combinations() does not allow 
+repeated elements, but combinations_with_replacement() does.
+
+accumulate()
+Make an iterator that returns accumulated sums, or accumulated results of other binary functions.
+
+groupby()
+Make an iterator that returns consecutive keys and groups from the iterable. The key is a function computing a key value for each element. If not specified or 
+is None, key defaults to an identity function and returns the element unchanged. Generally, the iterable needs to already be sorted on the same key function.
