@@ -9,3 +9,24 @@ Best practice in your application with multiple modules is to create an internal
 your module and ensures no name collisions. The logging module creates a hierarchy of loggers, starting with the root logger, and adding the new logger to this hierarchy.
 If you then import your module in another module, log messages can be associated with the correct module through the logger name. Note that changing the basicConfig of 
 the root logger will also affect the log events of the other (lower) loggers in the hierarchy.
+
+Propagation
+By default, all created loggers will pass the log events to the handlers of higher loggers, in addition to any handlers attached to the created logger. You can 
+deactivate this by setting propagate = False. Sometimes when you wonder why you don't see log messages from another module, then this property may be the reason.
+
+LogHandlers
+Handler objects are responsible for dispatching the appropriate log messages to the handler's specific destination. For example you can use different handlers to send 
+log messaged to the standard output stream, to files, via HTTP, or via Email. 
+
+Creating a logging config file and reading it using the fileConfig() function. See example below.
+Creating a dictionary of configuration information and passing it to the dictConfig() function. 
+
+.conf file
+Create a .conf (or sometimes stored as .ini) file, define the loggers, handlers, and formatters and provide the names as keys. After their names are defined, they are 
+configured by adding the words logger, handler, and formatter before their names separated by an underscore. Then you can set the properties for each logger, handler, 
+and formatter. In the example below, the root logger and a logger named simpleExample will be configured with a StreamHandler.
+
+Logging in JSON Format
+If your application generates many logs from different modules, and especially in a microservice architecture, it can be challenging to locate the important logs for 
+your analysis. Therefore, it is best practice to log your messages in JSON format, and send them to a centralized log management system. Then you can easily search, 
+visualize, and analyze your log records.
