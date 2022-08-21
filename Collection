@@ -6,3 +6,8 @@ OrderedDict : dict subclass that remembers the order entries were added
 Counter : dict subclass for counting hashable objects
 defaultdict : dict subclass that calls a factory function to supply missing values
 deque : list-like container with fast appends and pops on either end
+
+Namedtuple
+
+namedtuples are easy to create, lightweight object types. They assign meaning to each position in a tuple and allow for more readable, self-documenting code. They can be used 
+wherever regular tuples are used, and they add the ability to access fields by name instead of position index.
