@@ -1,0 +1,7 @@
+A lambda function is a small (one line) anonymous function that is defined without a name. A lambda function can take any number of arguments, but can only have one 
+expression. While normal functions are defined using the def keyword, in Python anonymous functions are defined using the lambda keyword.
+
+lambda arguments: expression
+
+Lambda functions are used when a simple function is used only once or for a short period in your code. It's most common use is as an argument to higher-order functions 
+(functions that takes in other functions as arguments). They are also used along with built-in functions like map(), filter(), reduce().
