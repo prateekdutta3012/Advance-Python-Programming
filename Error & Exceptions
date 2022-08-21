@@ -1,0 +1,30 @@
+A Python program terminates as soon as it encounters an error. In Python, an error can be a syntax error or an exception. In this article we will have a look at:
+
+Syntax Error vs. Exception
+How to raise Exceptions
+How to handle Exceptions
+Most common built-in Exceptions
+How to define your own Exception
+Syntax Errors
+A Syntax Error occurs when the parser detects a syntactically incorrect statement. A syntax error can be for example a typo, missing brackets, no new line (see code 
+below), or wrong identation (this will actually raise its own IndentationError, but its subclassed from a SyntaxError).
+
+Exceptions
+Even if a statement is syntactically correct, it may cause an error when it is executed. This is called an Exception Error. There are several different error classes, 
+for example trying to add a number and a string will raise a TypeError.
+
+Common built-in Exceptions
+
+ImportError: If a module cannot be imported
+NameError: If you try to use a variable that was not defined
+FileNotFoundError: If you try to open a file that does not exist or you specify the wrong path
+ValueError: When an operation or function receives an argument that has the right type but an inappropriate value, e.g. try to remove a value from a list that does not 
+exist
+TypeError: Raised when an operation or function is applied to an object of inappropriate type.
+IndexError: If you try to access an invalid index of a sequence, e.g a list or a tuple.
+KeyError: If you try to access a non existing key of a dictionary.
+
+Define your own Exceptions
+You can define your own exception class that should be derived from the built-in Exception class. Most exceptions are defined with names that end in 'Error', similar 
+to the naming of the standard exceptions. Exception classes can be defined like any other class, but are usually kept simple, often only offering a number of attributes 
+that allow information about the error to be extracted by handlers.
