@@ -25,3 +25,13 @@ We can also use a class as a decorator. Therefore, we have to implement the __ca
 maintain a state, e.g. here we keep track of the number of times our function is executed. The __call__ method does essentially the same thing as the wrapper() method 
 we have seen earlier. It adds some functionality, executes the function, and returns its result. Note that here we use functools.update_wrapper() instead of 
 functools.wraps to preserve the information about our function.
+
+Some typical use cases
+
+- Use a timer decorator to calculate the execution time of a function
+- Use a debug decorator to print out some more information about the called function and its arguments
+- Use a check decorator to check if the arguments fulfill some requirements and adapt the bevaviour accordingly
+- Register functions (plugins)
+- Slow down code with time.sleep() to check network behaviour
+- Cache the return values for memoization (https://en.wikipedia.org/wiki/Memoization)
+- Add information or update a state
