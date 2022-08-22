@@ -12,3 +12,7 @@ Working with Custom Objects
 Encoding
 Encoding a custom object with the default JSONEncoder will raise a TypeError. We can specify a custom encoding function that will store the class name and all 
 object variables in a dictionary. Use this function for the default argument in the json.dump() method.
+
+Decoding
+Decoding a custom object with the defaut JSONDecoder is possible, but it will be decoded into a dictionary. Write a custom decode function that will take a dictionary as 
+input, and creates your custom object if it can find the object class name in the dictionary. Use this function for the object_hook argument in the json.load() method.
