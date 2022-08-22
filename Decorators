@@ -14,3 +14,14 @@ Function decorators
 In order to understand the decorator pattern, we have to understand that functions in Python are first class objects, which means that – like any other object – they can 
 be defined inside another function, passed as argument to another function, or returned from other functions. A decorator is a function that takes another function as 
 argument, wraps its behaviour inside an inner function. and returns the wrapped function. As a consequence, the decorated function no has extended functionality!
+
+Decorator function arguments
+Note that functools.wraps is a decorator that takes an argument for itself. We can think of this as 2 inner functions, so an inner function within an inner function. To 
+make this clearer, we look at another example: A repeat decorator that takes a number as input. Within this function, we have the actual decorator function that wraps 
+our function and extends its behaviour within another inner function. In this case, it repeats the input function the given number of times.
+
+Class decorators
+We can also use a class as a decorator. Therefore, we have to implement the __call__() method to make our object callable. Class decorators are typically used to 
+maintain a state, e.g. here we keep track of the number of times our function is executed. The __call__ method does essentially the same thing as the wrapper() method 
+we have seen earlier. It adds some functionality, executes the function, and returns its result. Note that here we use functools.update_wrapper() instead of 
+functools.wraps to preserve the information about our function.
