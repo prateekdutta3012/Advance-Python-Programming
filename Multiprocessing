@@ -1,0 +1,14 @@
+How to create and start multiple processes
+How to wait for processes to complete
+How to share data between processes
+How to use Locks to prevent race conditions
+How to use a Queue for process-safe data/task processing.
+How to use a Pool to manage multiple worker processes
+Create and run processes
+You create a process with multiprocessing.Process(). It takes two important arguments:
+
+target: a callable object (function) for this process to be invoked when the process starts
+args: the (function) arguments for the target function. This must be a tuple
+Start a process with process.start()
+
+Call process.join() to tell the program that it should wait for this process to complete before it continues with the rest of the code.
