@@ -10,4 +10,9 @@ Execution of a generator function
 Calling the function does not execute it. Instead, the function returns a generator object which is used to control execution. Generator objects execute when next() is 
 called. When calling next() the first time, execution begins at the start of the function and continues until the first yield statement where the value to the right of 
 the statement is returned. Subsequent calls to next() continue from the yield statement (and loop around) until another yield is reached. If yield is not called because 
-of a condition or the end is reached, a StopIteration exception is raised:
+of a condition or the end is reached, a StopIteration exception is raised.
+
+Concept behind a generator
+This class implements our generator as an iterable object. It has to implement __iter__ and __next__ to make it iterable, keep track of the current state (the current 
+number in this case), and take care of a StopIteration. It can be used to understand the concept behind generators. However, there is a lot of boilerplate code, and the 
+logic is not as clear as with a simple function using the yield keyword.
