@@ -4,3 +4,7 @@ the random module
 reproduce numbers with random.seed()
 create cryptographically strong random numbers with the secrets module
 create random nd arrays with numpy.random
+
+The seed generator
+With random.seed(), you can make results reproducible, and the chain of calls after random.seed() will produce the same trail of data. The sequence of random numbers 
+becomes deterministic, or completely determined by the seed value.
