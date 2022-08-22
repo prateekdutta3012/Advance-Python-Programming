@@ -8,3 +8,12 @@ create random nd arrays with numpy.random
 The seed generator
 With random.seed(), you can make results reproducible, and the chain of calls after random.seed() will produce the same trail of data. The sequence of random numbers 
 becomes deterministic, or completely determined by the seed value.
+
+The secrets module
+The secrets module is used for generating cryptographically strong random numbers suitable for managing data such as passwords, account authentication, security 
+tokens, and related secrets. In particularly, secrets should be used in preference to the default pseudo-random number generator in the random module, which is designed 
+for modelling and simulation, not security or cryptography.
+
+Random numbers with NumPy
+Create random numbers for nd arrays. The NumPy pseudorandom number generator is different from the Python standard library pseudorandom number generator.
+Importantly, seeding the Python pseudorandom number generator does not impact the NumPy pseudorandom number generator. It must be seeded and used separately.
