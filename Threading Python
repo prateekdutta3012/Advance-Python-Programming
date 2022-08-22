@@ -1,0 +1,17 @@
+Threading in Python
+In this article we talk about how to use the threading module in Python.
+
+How to create and start multiple threads
+How to wait for threads to complete
+How to share data between threads
+How to use Locks to prevent race conditions
+What is a daemon thread
+How to use a Queue for thread-safe data/task processing.
+Create and run threads
+You create a thread with threading.Thread(). It takes two important arguments:
+
+target: a callable object (function) for this thread to be invoked when the thread starts
+args: the (function) arguments for the target function. This must be a tuple
+Start a thread with thread.start()
+
+Call thread.join() to tell the program that it should wait for this thread to complete before it continues with the rest of the code.
