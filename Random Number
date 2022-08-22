@@ -1,0 +1,6 @@
+Python defines a set of functions that are used to generate or manipulate random numbers. This article covers:
+
+the random module
+reproduce numbers with random.seed()
+create cryptographically strong random numbers with the secrets module
+create random nd arrays with numpy.random
