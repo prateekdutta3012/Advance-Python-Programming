@@ -1,0 +1,16 @@
+Decorators
+A decorator is a function that takes another function and extends the behavior of this function without explicitly modifying it. It is a very powerful tool that allows 
+to add new functionality to an existing function.
+There are 2 kinds of decorators:
+
+Function decoratos
+Class decorators
+A function is decorated with the @ symbol:
+
+@my_decorator
+def my_function():
+    pass
+Function decorators
+In order to understand the decorator pattern, we have to understand that functions in Python are first class objects, which means that – like any other object – they can 
+be defined inside another function, passed as argument to another function, or returned from other functions. A decorator is a function that takes another function as 
+argument, wraps its behaviour inside an inner function. and returns the wrapped function. As a consequence, the decorated function no has extended functionality!
