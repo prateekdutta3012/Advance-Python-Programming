@@ -1,0 +1,55 @@
+In this module will go through function parameters and function arguments:
+
+- The difference between arguments and parameters
+- Positional and keyword arguments
+- Default arguments
+- Variable-length arguments (*args and **kwargs)
+- Container unpacking into function arguments
+- Local vs. global arguments
+- Parameter passing (by value or by reference?)
+
+Arguments and parameters
+
+- Parameters are the variables that are defined or used inside parentheses while defining a function
+- Arguments are the value passed for these parameters while calling a function
+
+Positional and keyword arguments
+
+We can pass arguments as positional or keyword arguments. Some benefits of keyword arguments can be:
+- We can call arguments by their names to make it more clear what they represent
+- We can rearrange arguments in a way that makes them most readable
+
+Default arguments
+Functions can have default arguments with a predefined value. This argument can be left out and the default value is then passed to the function, or the argument can 
+be used with a different value. Note that default arguments must be defined as the last parameters in a function.
+
+Variable-length arguments (*args and **kwargs)
+- If you mark a parameter with one asterisk (*), you can pass any number of positional arguments to your function (Typically called *args)
+- If you mark a parameter with two asterisks (**), you can pass any number of keyword arguments to this function (Typically called **kwargs).
+
+Forced keyword arguments
+
+- If you write '*,' in your function parameter list, all parameters after that must be passed as keyword arguments.
+- Arguments after variable-length arguments must be keyword arguments.
+
+Unpacking into agruments
+
+- Lists or tuples can be unpacked into arguments with one asterisk (*) if the length of the container matches the number of function parameters.
+- Dictionaries can be unpacked into arguments with two asterisks (**) the the length and the keys match the function parameters.
+
+Local vs global variables
+
+Global variables can be accessed within a function body, but to modify them, we first must state global var_name in order to change the global variable.
+
+Parameter passing
+
+Python uses a mechanism, which is known as "Call-by-Object" or "Call-by-Object-Reference. The following rules must be considered:
+
+The parameter passed in is actually a reference to an object (but the reference is passed by value)
+Difference between mutable and immutable data types
+This means that:
+
+- Mutable objects (e.g. lists,dict) can be changed within a method.
+      > But if you rebind the reference in the method, the outer reference will still point at the original object.
+- Immutable objects (e.g. int, string) cannot be changed within a method.
+      > But immutable object CONTAINED WITHIN a mutable object can be re-assigned within a method.
