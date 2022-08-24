@@ -49,3 +49,11 @@ a multiprocessing environment, which means you can avoid having to use any synch
 The queue
 A queue is a linear data structure that follows the First In First Out (FIFO) principle. A good example is a queue of customers that are waiting in line, where the 
 customer that came first is served first.
+
+Using a queue in multiprocessing
+Operations with a queue are process-safe. The multiprocessing Queue implements all the methods of queue.Queue except for task_done() and join(). Important methods are:
+
+- q.get() : Remove and return the first item. By default, it blocks until the item is available.
+- q.put(item) : Puts element at the end of the queue. By default, it blocks until a free slot is available.
+- q.empty() : Return True if the queue is empty.
+- q.close() : Indicate that no more data will be put on this queue by the current process.
