@@ -1,0 +1,24 @@
+Context managers and the 'with' statement
+Context managers are a great tool for resource management. They allow you to allocate and release resources precisely when you want to. A well-known example is the with 
+open() statemtent.
+
+Examples of context managers
+- Open and close files
+- open and close database connections
+- Acquire and release locks:
+
+Implementing a context manager as a class
+To support the with statement for our own classes, we have to implement the __enter__ and __exit__ methods. Python calls __enter__ when execution enters the context of 
+the with statement. In here the resource should be acquired and returned. When execution leaves the context again, __exit__ is called and the resource is freed up.
+
+Handling exceptions
+If an exception occurs, Python passes the type, value, and traceback to the __exit__ method. It can handle the exception here. If anything other than True is returned 
+by the __exit__ method, then the exception is raised by the with statement.
+
+Implementing a context manager as a generator
+Instead of writing a class, we can also write a generator function and decorate it with the contextlib.contextmanager decorator. Then we can also call the function using
+a with statement. For this approach, the function must yield the resource in a try statement, and all the content of the __exit__ method to free up the resource goes now 
+inside the corresponding finally statement.
+
+The generator first acquires the resource. It then temporarily suspends its own execution and yields the resource so it can be used by the caller. When the caller leaves 
+the with context, the generator continues to execute and frees up the resource in the finally statement.
