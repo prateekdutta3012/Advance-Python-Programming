@@ -39,7 +39,7 @@ the state is unlocked again.
 
 Two functions are important:
 
-lock.acquire() : This will lock the state and block
-lock.release() : This will unlock the state again.
+- lock.acquire() : This will lock the state and block
+- lock.release() : This will unlock the state again.
 
 
