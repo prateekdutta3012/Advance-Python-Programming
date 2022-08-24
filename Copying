@@ -1,0 +1,10 @@
+Shallow vs deep copying
+
+In Python, assignment statements (obj_b = obj_a) do not create real copies. It only creates a new variable with the same reference. So when you want to make actual copies
+of mutable objects (lists, dicts) and want to modify the copy without affecting the original, you have to be careful.
+For 'real' copies we can use the copy module. However, for compound/nested objects (e.g. nested lists or dicts) and custom objects there is an important difference 
+between shallow and deep copying:
+
+- shallow copies: Only one level deep. It creates a new collection object and populates it with references to the nested objects. This means modyfing a nested object in 
+the copy deeper than one level affects the original.
+- deep copies: A full independent clone. It creates a new collection object and then recursively populates it with copies of the nested objects found in the original.
