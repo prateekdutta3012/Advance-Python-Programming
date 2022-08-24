@@ -12,3 +12,13 @@ args: the (function) arguments for the target function. This must be a tuple
 Start a process with process.start()
 
 Call process.join() to tell the program that it should wait for this process to complete before it continues with the rest of the code.
+
+Share data between processes
+Since processes don't live in the same memory space, they do not have access to the same (public) data. Thus, they need special shared memory objects to share data.
+
+Data can be stored in a shared memory variable using Value or Array.
+
+Value(type, value): Create a ctypes object of type type. Access the value with .target.
+Array(type, value): Create a ctypes array with elements of type type. Access the values with [].
+Task: Create two processes, each process should have access to a shared variable and modify it (in this case only increase it repeatedly by 1 for 100 times). Create another two processes that share an array and modify (increase) all the elements in the array.
+
