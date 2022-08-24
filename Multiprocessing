@@ -20,5 +20,22 @@ Data can be stored in a shared memory variable using Value or Array.
 
 Value(type, value): Create a ctypes object of type type. Access the value with .target.
 Array(type, value): Create a ctypes array with elements of type type. Access the values with [].
-Task: Create two processes, each process should have access to a shared variable and modify it (in this case only increase it repeatedly by 1 for 100 times). Create another two processes that share an array and modify (increase) all the elements in the array.
+Task: Create two processes, each process should have access to a shared variable and modify it (in this case only increase it repeatedly by 1 for 100 times). Create 
+another two processes that share an array and modify (increase) all the elements in the array.
+
+Race condition
+A race condition happened here. A race condition occurs when two or more processes or threads can access shared data and they try to change it at the same time. In our
+example the two processes have to read the shared value, increase it by 1, and write it back into the shared variable. If this happens at the same time, the two 
+processes read the same value, increase it and write it back. Thus, both processes write the same increased value back into the shared object. 
+
+Avoid race conditions with Locks
+A lock (also known as mutex) is a synchronization mechanism for enforcing limits on access to a resource in an environment where there are many processes/threads of 
+execution. A Lock has two states: locked and unlocked. If the state is locked, it does not allow other concurrent processes/threads to enter this code section until 
+the state is unlocked again.
+
+Two functions are important:
+
+lock.acquire() : This will lock the state and block
+lock.release() : This will unlock the state again.
+
 
