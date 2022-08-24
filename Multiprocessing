@@ -42,4 +42,10 @@ Two functions are important:
 - lock.acquire() : This will lock the state and block
 - lock.release() : This will unlock the state again.
 
+Using Queues in Python
+Data can also be shared between processes with a Queue. Queues can be used for thread-safe/process-safe data exchanges and data processing both in a multithreaded and 
+a multiprocessing environment, which means you can avoid having to use any synchronization primitives like locks.
 
+The queue
+A queue is a linear data structure that follows the First In First Out (FIFO) principle. A good example is a queue of customers that are waiting in line, where the 
+customer that came first is served first.
