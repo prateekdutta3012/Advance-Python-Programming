@@ -57,3 +57,13 @@ Operations with a queue are process-safe. The multiprocessing Queue implements a
 - q.put(item) : Puts element at the end of the queue. By default, it blocks until a free slot is available.
 - q.empty() : Return True if the queue is empty.
 - q.close() : Indicate that no more data will be put on this queue by the current process.
+
+Process Pools
+A process pool object controls a pool of worker processes to which jobs can be submitted It supports asynchronous results with timeouts and callbacks and has a 
+parallel map implementation. It can automatically manage the available processors and split data into smaller chunks which can then be processed in parallel by 
+different processes. See https://docs.python.org/3.7/library/multiprocessing.html#multiprocessing.pool for all possible methods. Important methods are:
+
+- map(func, iterable[, chunksize]) : This method chops the iterable into a number of chunks which it submits to the process pool as separate tasks. The (approximate) size of these chunks can be specified by setting chunksize to a positive integer. It blocks until the result is ready.
+- close() : Prevents any more tasks from being submitted to the pool. Once all the tasks have been completed the worker processes will exit.
+- join(): Wait for the worker processes to exit. One must call close() or terminate() before using join().
+- apply(func, args): Call func with arguments args. It blocks until the result is ready. func is only executed in ONE of the workers of the pool.
